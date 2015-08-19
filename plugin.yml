@@ -1,0 +1,5 @@
+name: HookShot
+main: HookShot\HookShot
+version: 1.0-Alpha
+author: hm
+api: [1.12.0]
