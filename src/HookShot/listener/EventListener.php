@@ -5,16 +5,10 @@ namespace HookShot\listener;
 use HookShot\database\PluginData;
 use pocketmine\event\Listener;
 use pocketmine\plugin\Plugin;
-use pocketmine\command\CommandSender;
-use pocketmine\command\Command;
 use pocketmine\event\server\DataPacketReceiveEvent;
-use pocketmine\network\protocol\DataPacket;
 use pocketmine\item\Item;
 use pocketmine\Server;
-use pocketmine\Player;
 use pocketmine\math\Vector3;
-use pocketmine\network\protocol\Info;
-use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\network\protocol\UseItemPacket;
 use pocketmine\nbt\tag\Compound;
 use pocketmine\nbt\tag\Enum;
@@ -25,7 +19,6 @@ use pocketmine\event\entity\ProjectileLaunchEvent;
 use pocketmine\entity\Entity;
 use pocketmine\entity\Projectile;
 use pocketmine\network\protocol\SetEntityLinkPacket;
-use pocketmine\level\Explosion;
 use HookShot\entity\Bobber;
 
 class EventListener implements Listener {

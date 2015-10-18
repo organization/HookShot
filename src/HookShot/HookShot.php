@@ -9,7 +9,7 @@ use pocketmine\event\Listener;
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;
 use HookShot\item\FishingRod;
-use pocketmine\inventory\BigShapelessRecipe;
+use pocketmine\inventory\BigShapedRecipe;
 
 class HookShot extends PluginBase implements Listener {
 	private $eventListener;
@@ -25,7 +25,9 @@ class HookShot extends PluginBase implements Listener {
 		
 		Item::$list [346] = FishingRod::class;
 		Item::addCreativeItem ( new Item ( 346 ) );
-		$this->getServer ()->addRecipe ( (new BigShapelessRecipe ( Item::get ( 346, 0, 1 ) ))->addIngredient ( Item::get ( Item::STICK, null, 3 ) )->addIngredient ( Item::get ( Item::STRING, null, 2 ) ) );
+		
+		$this->getServer ()->addRecipe ( (new BigShapedRecipe ( Item::get ( 346, 0, 1 ), "  P", " PS", "P S" ))->setIngredient ( "P", Item::get ( Item::STICK, null, 3 ) )->setIngredient ( "S", Item::get ( Item::STRING, null, 2 ) ) );
+		
 		Entity::registerEntity ( "\\HookShot\\entity\\Bobber", true );
 	}
 	/**

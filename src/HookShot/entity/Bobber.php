@@ -4,7 +4,6 @@ namespace HookShot\entity;
 
 use pocketmine\level\format\FullChunk;
 use pocketmine\nbt\tag\Compound;
-use pocketmine\network\Network;
 use pocketmine\network\protocol\AddEntityPacket;
 use pocketmine\Player;
 use pocketmine\entity\Projectile;
@@ -40,7 +39,7 @@ class Bobber extends Projectile {
 	}
 	public function spawnTo(Player $player) {
 		$pk = new AddEntityPacket ();
-		$pk->type = Bobber::NETWORK_ID;
+		$pk->type = self::NETWORK_ID;
 		$pk->eid = $this->getId ();
 		$pk->x = $this->x;
 		$pk->y = $this->y;
@@ -49,7 +48,7 @@ class Bobber extends Projectile {
 		$pk->speedY = $this->motionY;
 		$pk->speedZ = $this->motionZ;
 		$pk->metadata = $this->dataProperties;
-		$player->dataPacket ( $pk->setChannel ( Network::CHANNEL_ENTITY_SPAWNING ) );
+		$player->dataPacket ( $pk );
 		
 		parent::spawnTo ( $player );
 	}

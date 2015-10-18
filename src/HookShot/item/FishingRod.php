@@ -6,10 +6,6 @@ use pocketmine\item\Item;
 use pocketmine\level\Level;
 use pocketmine\block\Block;
 use pocketmine\Player;
-use pocketmine\nbt\tag\Compound;
-use pocketmine\nbt\tag\Enum;
-use pocketmine\nbt\tag\Double;
-use pocketmine\nbt\tag\Float;
 
 class FishingRod extends Item {
 	public function __construct($meta = 0, $count = 1) {
